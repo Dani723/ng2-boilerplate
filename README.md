@@ -1,6 +1,6 @@
 # ng2 boilerplate
 
-Utilizes:
+**Utilizes**
 - Angular 2
 - VCL
 - webpack 2.1
@@ -27,3 +27,28 @@ npm run dev
 npm run build
 ```
 
+## IDE Configuration
+
+### Vistual Studio Code
+
+**Extensions**
+
+- tslint
+- EditorConfig for VS Code
+
+**Typescript**
+
+This projects uses the Typescript 2 RC. 
+Install via npm
+```
+npm install -g typescript@rc
+```
+and point to the sdk in your user or workspace settings 
+
+```json
+{
+  ...
+  "typescript.tsdk": "/path/to/global/.npm-packages/lib/node_modules/typescript/lib",
+  ... 
+}
+```
