@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { VCLModule } from 'ng-vcl';
-import { routing, appRoutingProviders } from './app.routes';
+import { VCLIconModule } from 'ng-vcl';
+import { appRoutingProviders, routing } from './app.routes';
 import { AppComponent } from './components/app/app.component';
 import { HomeComponent } from './components/home/home.component';
 
@@ -12,7 +12,7 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     routing,
-    VCLModule
+    VCLIconModule
   ],
   declarations: [
     AppComponent,

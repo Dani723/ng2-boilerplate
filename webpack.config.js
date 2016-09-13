@@ -3,11 +3,17 @@ const webpackMerge = require('webpack-merge');
 const path = require('path');
 const commonConfig = require('./webpack.config.common.js');
 const AppCachePlugin = require('appcache-webpack-plugin');
+let BabiliPlugin = require("babili-webpack-plugin");
 
 module.exports = function(options) {
   const ENV = options.ENV || 'production';
 
   return webpackMerge(commonConfig, {
+    entry: {
+      'polyfills': './app/polyfills.ts',
+      'vendor': './app/vendor.ts',
+      'app': './aot/bootstrap.ts'
+    },
     plugins: [
       // new webpack.optimize.DedupePlugin(),
       new webpack.DefinePlugin({

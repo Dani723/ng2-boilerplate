@@ -14,21 +14,26 @@ module.exports = {
     loaders: [
       {
         test: /\.ts?$/,
+        // loader: 'awesome-typescript-loader?useBabel=true'
         loaders: ['awesome-typescript-loader?useWebpackText=true', 'angular2-template-loader'],
       },
       {
         test: /\.html?$/,
         loaders: ['raw-loader'],
       },
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: "style-loader",
           loader: "css-loader?-url"
-        }) 
-      }
+        })
+      },
+      {
+        test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
+        loader: 'file?name=assets/[name].[hash].[ext]'
+      },
     ]
-  },          
+  },
 
   output: {
     filename: '[name].[hash].bundle.js',
@@ -52,6 +57,7 @@ module.exports = {
     }),
   ],
   resolve: {
+    mainFields: ["module", "browser", "main"],
     extensions: ['', '.js', '.ts']
   }
 }
