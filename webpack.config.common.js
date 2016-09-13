@@ -14,7 +14,6 @@ module.exports = {
     loaders: [
       {
         test: /\.ts?$/,
-        // loader: 'awesome-typescript-loader?useBabel=true'
         loaders: ['awesome-typescript-loader?useWebpackText=true', 'angular2-template-loader'],
       },
       {
