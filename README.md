@@ -27,6 +27,12 @@ npm run dev
 npm run build
 ```
 
+An aot (ahead of time / precompiled templates) enabled build can be created with
+```sh
+npm run build:aot
+```
+This might not work with some dependencies.
+
 ## IDE Configuration
 
 ### Vistual Studio Code
