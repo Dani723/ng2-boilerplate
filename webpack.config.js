@@ -7,17 +7,19 @@ let BabiliPlugin = require("babili-webpack-plugin");
 
 module.exports = function(options) {
   const ENV = options.ENV || 'production';
+  const AOT = !!options.AOT || false;
 
   return webpackMerge(commonConfig, {
     entry: {
       'polyfills': './app/polyfills.ts',
       'vendor': './app/vendor.ts',
-      'app': './aot/bootstrap.ts'
+      'app': `./${AOT ? 'aot' : 'app'}/bootstrap.ts`
     },
     plugins: [
       // new webpack.optimize.DedupePlugin(),
       new webpack.DefinePlugin({
-        'ENV': JSON.stringify(ENV)
+        'ENV': JSON.stringify(ENV),
+        'AOT': JSON.stringify(AOT)
       }),
       new webpack.NoErrorsPlugin(),
       new webpack.optimize.UglifyJsPlugin({
