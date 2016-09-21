@@ -3,7 +3,6 @@ const webpackMerge = require('webpack-merge');
 const path = require('path');
 const commonConfig = require('./webpack.config.common.js');
 const AppCachePlugin = require('appcache-webpack-plugin');
-let BabiliPlugin = require("babili-webpack-plugin");
 
 module.exports = function(options) {
   const ENV = options.ENV || 'production';
